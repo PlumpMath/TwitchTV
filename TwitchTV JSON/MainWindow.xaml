@@ -1,0 +1,36 @@
+﻿<Window x:Class="TwitchTV_JSON.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TwitchTV" Height="400" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <ListView Name="streamview" />
+        <Button Content="Refresh" Name="btn_refresh" Click="btn_refresh_Click" Grid.Row="1" Grid.RowSpan="2" />
+        <Button Content="Connect" Name="btn_connect" Click="btn_connect_Click" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" />
+        <StackPanel Grid.Column="1">
+            <Image Name="image_preview" Source="{Binding}" />
+            <GroupBox Header="Stream">
+                <StackPanel>
+                    <TextBlock Name="text_title" Text="Title:" />
+                    <TextBlock Name="text_owner" Text="Owner:" />
+                    <TextBlock Name="text_viewer" Text="Viewers:" />
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Quality">
+                <StackPanel Name="Quality">
+                    <RadioButton Content="mobile_high" IsChecked="True" />
+                    <RadioButton Content="mobile_medium" />
+                    <RadioButton Content="mobile_low" />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
